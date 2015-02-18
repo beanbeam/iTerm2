@@ -6315,8 +6315,11 @@ static double EuclideanDistance(NSPoint p1, NSPoint p2) {
                                       faint:NO
                                isBackground:YES];
             }
+
+            if (bgColor == ALTSEM_DEFAULT) {
+                aColor = [aColor colorWithAlphaComponent:alphaIfTransparencyInUse];
+            }
         }
-        aColor = [aColor colorWithAlphaComponent:alphaIfTransparencyInUse];
         [aColor set];
         NSRectFillUsingOperation(bgRect,
                                  hasBGImage ? NSCompositeSourceOver : NSCompositeCopy);
